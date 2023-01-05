@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+    node:
+      image: ma_super_app
+      container_name: ma_super_app
+      ports:
+        - 3000:3000
+      environment: 
+        - DATABASE_HOST=mysql
+        - DATABASE_PORT=3306
+        - DATABASE_USERNAME=test
+        - DATABASE_PASSWORD=test
+        - DATABASE_NAME=tp2
+
+
+    mysql:
+      image: mysql:5.7
+      container_name: db
+      ports:
+        - 3306:3306 
+      environment:
+        - MYSQL_DATABASE=tp2
+        - MYSQL_USER=test
+        - MYSQL_PASSWORD=test
+        - MYSQL_ROOT_PASSWORD=test
